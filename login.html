@@ -21,12 +21,12 @@ $("#tanggal").datepicker();
             var x=register.isinama.value;
             var x1=parseInt(x);
 			if(register.isinama.value==""){
-				alert("Nama masih kosong");
+				alert("KTP masih kosong");
 				register.isinama.focus();
 				return false;
             }
             if(isNaN(x1)==false){
-				alert("Nama harus huruf");
+				alert("KTP harus angka");
                 register.isinama.focus();
                 return false;          
             }
@@ -43,24 +43,7 @@ $("#tanggal").datepicker();
                 return false;          
             }
 			
-			
-							
-			if ( ( register.jenis[0].checked == false ) && ( register.jenis[1].checked == false ) ){
-				alert ( "Pilih gender: Laki-laki atau Perempuan " );
-				return false;
-			}
-			
-			var x=register.notelpon.value;
-			if(x==""){
-				alert("Nomor telepon wajib diisi");
-				register.notelpon.focus();
-				return false;
-			}
-			if(isNaN(x1)==true){
-				alert("Nomor telepon harus angka");
-                register.notelpon.focus();
-                return false;          
-            }
+				
 			var x=register.isiemail.value;
 			if(x==""){
 				alert("Alamat Email masih kosong");
