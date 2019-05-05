@@ -3,6 +3,14 @@ html,body{
 		margin:0;
 		font-family: sans-serif;
 	}
+
+table {
+  border-spacing: 5px;
+}
+
+table, tr, td {
+  border: 1px solid black;
+}
  
 	.menu-kelompok2{
 		background-color: #1e2126;
