@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Penugasan Bike Sharing</title>
+    <title>Update Penugasan Bike Sharing</title>
     <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
     <link rel="stylesheet" href="css/grid.css" type="text/css" media="screen">
@@ -24,23 +24,23 @@ $("#tanggal2").datepicker();
         font-family: sans-serif;
     }
  
-    .menu-kelompok2{
+    .menu-malasngoding{
         background-color: #3141ff;
     }
  
-    .menu-kelompok2 ul {
+    .menu-malasngoding ul {
         list-style-type: none;
         margin: 0;
         padding: 0;
         overflow: hidden;
     }
  
-    .menu-kelompok2 > ul > li {
+    .menu-malasngoding > ul > li {
         float: left;
     }
  
     
-    .menu-kelompok2 li a {
+    .menu-malasngoding li a {
         display: inline-block;
         color: white;
         text-align: center;
@@ -48,7 +48,7 @@ $("#tanggal2").datepicker();
         text-decoration: none;
     }
  
-    .menu-kelompok2 li a:hover{
+    .menu-malasngoding li a:hover{
         background-color: #2525ff;
     }
  
@@ -85,7 +85,7 @@ $("#tanggal2").datepicker();
     
 <header class="header">
 
-    <div class="menu-kelompok2">
+    <div class="menu-malasngoding">
  
         <ul>
             <li class="dropdown"><a href="#">Acara</a>
@@ -139,7 +139,7 @@ $("#tanggal2").datepicker();
                                         <div class="wrapper">
                                             <div class="grid_12">
                                             	<div class="indent-left">
-                                                	<h3 class="p2">Form Penambahan Penugasan</h3>
+                                                	<h3 class="p2">Form Update Penugasan</h3>
 																							
                                                
 <table>
@@ -148,9 +148,7 @@ $("#tanggal2").datepicker();
 <tr> 
 	<td> <b>Petugas</b> </td>
 	<td> : </td>
-    <td> <select name="petugas">
-    <option value="Ya">Dropdown Petugas</input>
-    </select>
+    <td> <input type="text" size="60" maxlength="60" name="isipetugas"></td>
     </td>
 </tr>
 
@@ -169,14 +167,13 @@ $("#tanggal2").datepicker();
 <tr> 
 	<td> <b>Stasiun<b> </td>
 	<td> : </td>
-    <td> <select name="stasiun">
-    <option value="Ya">Dropdown Stasiun</input>
+    <td> <input type="text" size="60" maxlength="60" name="isistasiun"></td>
     </select>
 </tr>
 
 
 <tr>
-	<td cols="3"> <input class="button" type="submit" name="tombol" value="SUBMIT" ></a></td>
+	<td cols="3"> <input class="button" type="submit" name="tombol" value="UPDATE" ></a></td>
 	
 </tr> 
 </fieldset>		

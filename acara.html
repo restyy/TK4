@@ -14,113 +14,118 @@ $("#tanggal").datepicker();
 $("#tanggal2").datepicker();
 }); 
 </script> 
-
-
 </head>
 
-<script type="text/javascript">
-         function valregister(){
-            var x=register.isijudul.value;
-            var x1=parseInt(x);
-            if(register.isijudul.value==""){
-                alert("Semua data wajib diisi!");
-                register.isijudul.focus();
-                return false;
-            }
-            if(isNaN(x1)==false){
-                alert("Nama harus huruf");
-                register.isinama.focus();
-                return false;          
-            }
-            
-            var x=register.isiidentitas.value;
-            if(x==""){
-                alert("Identitas wajib diisi");
-                register.isiidentitas.focus();
-                return false;
-            }
-            if(isNaN(x1)==true){
-                alert("Identitas harus angka");
-                register.isinama.focus();
-                return false;          
-            }
-            
-            
-                            
-            if ( ( register.jenis[0].checked == false ) && ( register.jenis[1].checked == false ) ){
-                alert ( "Pilih gender: Laki-laki atau Perempuan " );
-                return false;
-            }
-            
-            var x=register.notelpon.value;
-            if(x==""){
-                alert("Nomor telepon wajib diisi");
-                register.notelpon.focus();
-                return false;
-            }
-            if(isNaN(x1)==true){
-                alert("Nomor telepon harus angka");
-                register.notelpon.focus();
-                return false;          
-            }
-            var x=register.isiemail.value;
-            if(x==""){
-                alert("Alamat Email masih kosong");
-                register.isiemail.focus();
-                return false;
-            }else{
-                var atpos=x.indexOf("@");
-                var dotpos=x.lastIndexOf(".");
-                if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length){
-                    alert("Alamat Email Tidak Valid");
-                    register.isiemail.focus();
-                    return false;
-                }
-            }
-            
-                    
-            return true; 
-        }
-    </script>
+<body>
+   <style type="text/css">
+    html,body{
+        padding: 0;
+        margin:0;
+        font-family: sans-serif;
+    }
+ 
+    .menu-kelompok2{
+        background-color: #3141ff;
+    }
+ 
+    .menu-kelompok2 ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+ 
+    .menu-kelompok2 > ul > li {
+        float: left;
+    }
+ 
+    
+    .menu-kelompok2 li a {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+ 
+    .menu-kelompok2 li a:hover{
+        background-color: #2525ff;
+    }
+ 
+    li.dropdown {
+        display: inline-block;
+    }
+ 
+    .dropdown:hover .isi-dropdown {
+        display: block;
+    }
+ 
+    .isi-dropdown a:hover {
+        color: #fff !important;
+    }
+ 
+    .isi-dropdown {
+        position: absolute;
+        display: none;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        background-color: #f9f9f9;
+    }
+ 
+    .isi-dropdown a {
+        color: #3c3c3c !important;
+    }
+ 
+    .isi-dropdown a:hover {
+        color: #232323 !important;
+        background: #f3f3f3 !important;
+    }
+</style>
 
-         <select name = "dropdown">
-            <option value = "Computer Architecture" selected>Computer Architecture</option>
-            <option value = "Java">Java</option>
-            <option value = "Discrete Mathematics">Discrete Mathematics</option>\
-         </select>
+    
+<header class="header">
 
-<body id="page5">
-    <header>
-        <div class="row-1">
-            <div class="main">
-                <div class="container_12">
-                    <div class="grid_12">
-                        <nav>
-                            <ul class="menu">
-                                <li><a href="index.html">BERANDA</a></li>
-                                <li><a href="direktorat.html">DIREKTORAT</a></li>
-                                <li><a href="jurusan.html">JURUSAN</a></li>
-                                <li><a href="galeri.html">GALERI</a></li>
-                                <li><a class="active" href="acara.html">TAMBAH ACARA</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <div class="clear"></div>
-            </div>
-        </div>
-        
-        <div class="row-2">
-            <div class="main">
-                <div class="container_12">
-                    <div class="grid_9">
-                            <h4><a href="index.html"><img src="images/pnj2.jpg" > </a>
-                            </h4> 
-                    </div>                           
-                </div>
-            </div>
-        </div>      
-    </header>
+    <div class="menu-kelompok2">
+ 
+        <ul>
+            <li class="dropdown"><a href="#">Acara</a>
+            <ul class="isi-dropdown">
+                    <li><a href="#">Tambah Acara</a></li>
+                    <li><a href="#">Daftar Acara</a></li>
+                </ul></li>
+            <li class="dropdown"><a href="#">Petugas</a>
+            <ul class="isi-dropdown">
+                    <li><a href="#">Tambah Penugasan</a></li>
+                    <li><a href="#">Daftar Penugasan</a></li>
+                </ul></li>
+            <li class="dropdown"><a href="#">Stasiun</a>
+                <ul class="isi-dropdown">
+                    <li><a href="#">Tambah Stasiun</a></li>
+                    <li><a href="#">Daftar Stasiun</a></li>
+                </ul>
+            </li>
+            <li class="dropdown"><a href="#">Sepeda</a>
+                <ul class="isi-dropdown">
+                    <li><a href="#">Tambah Sepeda</a></li>
+                    <li><a href="#">Daftar Sepeda</a></li>
+                </ul>
+            </li>
+            <li class="dropdown"><a href="#">Voucher</a>
+                <ul class="isi-dropdown">
+                    <li><a href="#">Tambah Voucher</a></li>
+                    <li><a href="#">Daftar Voucher</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Daftar Peminjaman</a></li>
+            <li><a href="#">Daftar Laporan</a></li>
+            <li><a href="#">Logout</a></li>
+            
+        </ul>
+ 
+    </div>
+</header>
+ 
+<br/>
     
 
     <section id="content">
@@ -177,7 +182,10 @@ $("#tanggal2").datepicker();
 <tr> 
     <td> <b>Stasiun<b> </td>
     <td> : </td>
-    <td>  <input id="text" type="text" size="60" maxlength="60">  </td>
+    <td> <select name="petugas">
+    <option value="Ya">Dropdown Petugas</input>
+    </select>
+    </td>
 </tr>
 
 
