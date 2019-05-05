@@ -16,55 +16,6 @@ $("#tanggal").datepicker();
 
 </head>
 
-<script type="text/javascript">
-		 function valregister(){
-            var x=register.isinama.value;
-            var x1=parseInt(x);
-			if(register.isinama.value==""){
-				alert("KTP masih kosong");
-				register.isinama.focus();
-				return false;
-            }
-            if(isNaN(x1)==false){
-				alert("KTP harus angka");
-                register.isinama.focus();
-                return false;          
-            }
-			
-			var x=register.isiidentitas.value;
-			if(x==""){
-				alert("Identitas wajib diisi");
-				register.isiidentitas.focus();
-				return false;
-			}
-			if(isNaN(x1)==true){
-				alert("Identitas harus angka");
-                register.isinama.focus();
-                return false;          
-            }
-			
-				
-			var x=register.isiemail.value;
-			if(x==""){
-				alert("Alamat Email masih kosong");
-				register.isiemail.focus();
-				return false;
-			}else{
-				var atpos=x.indexOf("@");
-				var dotpos=x.lastIndexOf(".");
-				if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length){
-					alert("Alamat Email Tidak Valid");
-					register.isiemail.focus();
-					return false;
-				}
-			}
-			
-					
-			return true; 
-		}
-	</script>
-
-
 <body id="page5">
 	<header>
     	<div class="row-1">

@@ -5,8 +5,6 @@
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
     <link rel="stylesheet" href="css/grid.css" type="text/css" media="screen">
 	<script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
-	<script src="js/jquery.galleriffic.js" type="text/javascript"></script>
-	<script src="js/jquery.opacityrollover.js" type="text/javascript"></script> 
 </head>
 <body>
       	
@@ -66,53 +64,6 @@
             </div>
         </div>
     </footer>
-    <script type="text/javascript">
-			$(window).load(function() {
-			$('div.navigation').css({'width' : '600px', 'float' : 'right'});
-			$('div.content').css('display', 'block');
-	
-			var onMouseOutOpacity = 0.5;
-			$('#thumbs ul.thumbs li span').opacityrollover({
-				mouseOutOpacity:   onMouseOutOpacity,
-				mouseOverOpacity:  0.0,
-				fadeSpeed:         'fast',
-				exemptionSelector: '.selected'
-			});
-					
-			var gallery = $('#thumbs').galleriffic({
-				delay:                     7000,
-				numThumbs:                 12,
-				preloadAhead:              6,
-				enableTopPager:            false,
-				enableBottomPager:         false,
-				imageContainerSel:         '#slideshow',
-				controlsContainerSel:      '',
-				captionContainerSel:       '',
-				loadingContainerSel:       '',
-				renderSSControls:          true,
-				renderNavControls:         true,
-				playLinkText:              'Play Slideshow',
-				pauseLinkText:             'Pause Slideshow',
-				prevLinkText:              'Prev',
-				nextLinkText:              'Next',
-				nextPageLinkText:          'Next',
-				prevPageLinkText:          'Prev',
-				enableHistory:             true,
-				autoStart:                 7000,
-				syncTransitions:           true,
-				defaultTransitionDuration: 900,
-				onSlideChange:             function(prevIndex, nextIndex) {
-					this.find('ul.thumbs li span')
-						.css({opacity:0.5})
-				},
-				onPageTransitionOut:       function(callback) {
-					this.find('ul.thumbs li span').css({display:'block'});
-				},
-				onPageTransitionIn:        function() {
-					this.find('ul.thumbs li span').css({display:'none'});
-				}
-			});
-		});
-	</script>
+   
 </body>
 </html>

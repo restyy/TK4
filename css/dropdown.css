@@ -16,23 +16,23 @@ table2, tr, td {
   border: 0px solid black;
 }
  
-	.menu-kelompok2{
+	.menu-kelompok1{
 		background-color: #1e2126;
 	}
  
-	.menu-kelompok2 ul {
+	.menu-kelompok1 ul {
 		list-style-type: none;
 		margin: 0;
 		padding: 0;
 		overflow: hidden;
 	}
  
-	.menu-kelompok2 > ul > li {
+	.menu-kelompok1 > ul > li {
 		float: left;
 	}
  
 	
-	.menu-kelompok2 li a {
+	.menu-kelompok1 li a {
 		display: inline-block;
 		color: white;
 		text-align: center;
@@ -40,7 +40,7 @@ table2, tr, td {
 		text-decoration: none;
 	}
  
-	.menu-kelompok2 li a:hover{
+	.menu-kelompok1 li a:hover{
 		background-color: #20caf9;
 	}
  
