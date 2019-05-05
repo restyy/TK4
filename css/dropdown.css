@@ -4,23 +4,23 @@ html,body{
 		font-family: sans-serif;
 	}
  
-	.menu-malasngoding{
-		background-color: #3141ff;
+	.menu-kelompok2{
+		background-color: #1e2126;
 	}
  
-	.menu-malasngoding ul {
+	.menu-kelompok2 ul {
 		list-style-type: none;
 		margin: 0;
 		padding: 0;
 		overflow: hidden;
 	}
  
-	.menu-malasngoding > ul > li {
+	.menu-kelompok2 > ul > li {
 		float: left;
 	}
  
 	
-	.menu-malasngoding li a {
+	.menu-kelompok2 li a {
 		display: inline-block;
 		color: white;
 		text-align: center;
@@ -28,8 +28,8 @@ html,body{
 		text-decoration: none;
 	}
  
-	.menu-malasngoding li a:hover{
-		background-color: #2525ff;
+	.menu-kelompok2 li a:hover{
+		background-color: #20caf9;
 	}
  
 	li.dropdown {
