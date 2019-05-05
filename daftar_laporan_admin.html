@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Halaman Admin Bike Sharing</title>
+    <title>Halaman Daftar Laporan</title>
     <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
     <link rel="stylesheet" href="css/grid.css" type="text/css" media="screen">
@@ -18,10 +18,9 @@ $("#tanggal2").datepicker();
 
 
 </head>
+       
 
-     
-
-<body id="page5">
+<body>
 	<header class="header">
 
 	
@@ -78,10 +77,44 @@ $("#tanggal2").datepicker();
                                         <div class="wrapper">
                                             <div class="grid_12">
                                             	<div class="indent-left">
-                                                	<div class="wrapper">
-												<center><span class="title img-indent3">Halaman Admin</span></center>
-                                                	<p> <center>Selamat datang di halaman Admin Bike Sharing.<center></p>
-                                                </div>                       
+                                                	<h3 class="p2">Halaman Admin - Daftar Laporan</h3>
+													
+
+                  
+<table>
+<form name="register" id="contact-form" method="post" action="" enctype="multipart/form-data" onSubmit="return valregister()">
+<fieldset><br></br>
+<tr> 
+	<td> No </td>
+	<td> Id Laporan </td>
+	<td> Tanggal Pinjam</td>
+	<td> Anggota</td>
+	<td> Denda </td>
+	<td> Status</td>
+</tr>
+<tr> 
+	<td> 1 </td>
+	<td> 112 </td>
+	<td> 15 April 2019</td>
+	<td> 1111111 - Nunung
+[No kartu] - [Nama]
+</td>
+	<td> 30000  </td>
+	<td> Sudah selesai</td>
+</tr>
+
+<tr> 
+	<td> dst </td>
+	<td> dst </td>
+	<td> dst</td>
+	<td> dst</td>
+	<td> dst </td>
+	<td> dst</td>
+</tr>
+
+</fieldset>		
+</form>
+</table>                        
                                                        				
                                                  
                                                 </div>
@@ -109,4 +142,3 @@ $("#tanggal2").datepicker();
     </footer>
 </body>
 </html>
-
