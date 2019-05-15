@@ -5,7 +5,7 @@
 <?php
 	require "connection.php";
 	$connection = connection();
-	$query = "SELECT * FROM bike_sharing.bike_sharing;";
+	$query = "SELECT * FROM bike_sharing.person;";
 	$names = pg_query($connection, $query);
 	pg_close($connection);
 ?>
