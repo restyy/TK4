@@ -5,7 +5,7 @@
 <?php
 	require "connection.php";
 	$connection = connection();
-	$query = "SELECT * FROM TEST.NAME_TEST;";
+	$query = "SELECT * FROM bike_sharing.bike_sharing;";
 	$names = pg_query($connection, $query);
 	pg_close($connection);
 ?>
@@ -16,7 +16,9 @@
 	$size = count($names);
 	if ($size != 0) {
 		while($row = pg_fetch_assoc($names)) {
-			echo ($row["nama_depan"]);
+			echo ($row["nama"]);
+			echo ("<br />");
+			echo ($row["email"]);
 			echo ("<br />");
 		}
 	}
