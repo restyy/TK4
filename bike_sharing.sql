@@ -2,6 +2,59 @@
 CREATE SCHEMA bike_sharing;
 
 
+--
+-- Name: emp_total_hours_proj(); Type: FUNCTION; Schema: bike_sharing; Owner: db2018043
+--
+
+CREATE FUNCTION bike_sharing.emp_total_hours_proj() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+BEGIN
+IF (TG_OP = 'UPDATE') THEN
+UPDATE employee SET total_hours_project =
+total_hours_project + NEW.hours
+WHERE ssn = NEW.essn;
+RETURN NEW;
+ELSIF (TG_OP = 'DELETE') THEN
+UPDATE employee SET total_hours_project =
+total_hours_project - OLD.hours
+WHERE ssn = OLD.essn;
+RETURN OLD;
+END IF;
+END;
+$$;
+
+
+ALTER FUNCTION bike_sharing.emp_total_hours_proj() OWNER TO db2018043;
+
+--
+-- Name: hitung_denda(); Type: FUNCTION; Schema: bike_sharing; Owner: db2018043
+--
+
+CREATE FUNCTION bike_sharing.hitung_denda() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+BEGIN
+IF (TG_OP = 'UPDATE') THEN
+UPDATE PEMINJAMAN SET denda =
+NEW.datetime_kembali-NEW.datetime_pinjam*50000
+WHERE no_kartu_anggota = NEW.no_kartu_anggota;
+RETURN NEW;
+END IF;
+END;
+$$;
+
+
+ALTER FUNCTION bike_sharing.hitung_denda() OWNER TO db2018043;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: acara; Type: TABLE; Schema: bike_sharing; Owner: db2018043
+--
+
 CREATE TABLE bike_sharing.acara (
     id_acara character varying(10) NOT NULL,
     judul character varying(100) NOT NULL,
@@ -12,7 +65,11 @@ CREATE TABLE bike_sharing.acara (
 );
 
 
+ALTER TABLE bike_sharing.acara OWNER TO db2018043;
 
+--
+-- Name: acara_stasiun; Type: TABLE; Schema: bike_sharing; Owner: db2018043
+--
 
 CREATE TABLE bike_sharing.acara_stasiun (
     id_stasiun character varying(10) NOT NULL,
@@ -20,7 +77,11 @@ CREATE TABLE bike_sharing.acara_stasiun (
 );
 
 
+ALTER TABLE bike_sharing.acara_stasiun OWNER TO db2018043;
 
+--
+-- Name: anggota; Type: TABLE; Schema: bike_sharing; Owner: db2018043
+--
 
 CREATE TABLE bike_sharing.anggota (
     no_kartu character varying(10) NOT NULL,
@@ -30,6 +91,11 @@ CREATE TABLE bike_sharing.anggota (
 );
 
 
+ALTER TABLE bike_sharing.anggota OWNER TO db2018043;
+
+--
+-- Name: laporan; Type: TABLE; Schema: bike_sharing; Owner: db2018043
+--
 
 CREATE TABLE bike_sharing.laporan (
     id_laporan character varying(10) NOT NULL,
@@ -41,7 +107,11 @@ CREATE TABLE bike_sharing.laporan (
 );
 
 
+ALTER TABLE bike_sharing.laporan OWNER TO db2018043;
 
+--
+-- Name: peminjaman; Type: TABLE; Schema: bike_sharing; Owner: db2018043
+--
 
 CREATE TABLE bike_sharing.peminjaman (
     no_kartu_anggota character varying(10) NOT NULL,
@@ -54,6 +124,11 @@ CREATE TABLE bike_sharing.peminjaman (
 );
 
 
+ALTER TABLE bike_sharing.peminjaman OWNER TO db2018043;
+
+--
+-- Name: penugasan; Type: TABLE; Schema: bike_sharing; Owner: db2018043
+--
 
 CREATE TABLE bike_sharing.penugasan (
     ktp character varying(20) NOT NULL,
@@ -63,7 +138,11 @@ CREATE TABLE bike_sharing.penugasan (
 );
 
 
+ALTER TABLE bike_sharing.penugasan OWNER TO db2018043;
 
+--
+-- Name: person; Type: TABLE; Schema: bike_sharing; Owner: db2018043
+--
 
 CREATE TABLE bike_sharing.person (
     ktp character varying(20) NOT NULL,
@@ -75,7 +154,11 @@ CREATE TABLE bike_sharing.person (
 );
 
 
+ALTER TABLE bike_sharing.person OWNER TO db2018043;
 
+--
+-- Name: petugas; Type: TABLE; Schema: bike_sharing; Owner: db2018043
+--
 
 CREATE TABLE bike_sharing.petugas (
     ktp character varying(20) NOT NULL,
@@ -83,6 +166,11 @@ CREATE TABLE bike_sharing.petugas (
 );
 
 
+ALTER TABLE bike_sharing.petugas OWNER TO db2018043;
+
+--
+-- Name: sepeda; Type: TABLE; Schema: bike_sharing; Owner: db2018043
+--
 
 CREATE TABLE bike_sharing.sepeda (
     nomor character varying(10) NOT NULL,
@@ -94,7 +182,11 @@ CREATE TABLE bike_sharing.sepeda (
 );
 
 
+ALTER TABLE bike_sharing.sepeda OWNER TO db2018043;
 
+--
+-- Name: stasiun; Type: TABLE; Schema: bike_sharing; Owner: db2018043
+--
 
 CREATE TABLE bike_sharing.stasiun (
     id_stasiun character varying(10) NOT NULL,
@@ -105,7 +197,11 @@ CREATE TABLE bike_sharing.stasiun (
 );
 
 
+ALTER TABLE bike_sharing.stasiun OWNER TO db2018043;
 
+--
+-- Name: transaksi; Type: TABLE; Schema: bike_sharing; Owner: db2018043
+--
 
 CREATE TABLE bike_sharing.transaksi (
     no_kartu_anggota character varying(10) NOT NULL,
@@ -115,6 +211,11 @@ CREATE TABLE bike_sharing.transaksi (
 );
 
 
+ALTER TABLE bike_sharing.transaksi OWNER TO db2018043;
+
+--
+-- Name: transaksi_khusus_peminjaman; Type: TABLE; Schema: bike_sharing; Owner: db2018043
+--
 
 CREATE TABLE bike_sharing.transaksi_khusus_peminjaman (
     no_kartu_anggota character varying(10) NOT NULL,
@@ -126,7 +227,11 @@ CREATE TABLE bike_sharing.transaksi_khusus_peminjaman (
 );
 
 
+ALTER TABLE bike_sharing.transaksi_khusus_peminjaman OWNER TO db2018043;
 
+--
+-- Name: voucher; Type: TABLE; Schema: bike_sharing; Owner: db2018043
+--
 
 CREATE TABLE bike_sharing.voucher (
     id_voucher character varying(10) NOT NULL,
@@ -138,7 +243,11 @@ CREATE TABLE bike_sharing.voucher (
 );
 
 
+ALTER TABLE bike_sharing.voucher OWNER TO db2018043;
 
+--
+-- Data for Name: acara; Type: TABLE DATA; Schema: bike_sharing; Owner: db2018043
+--
 
 COPY bike_sharing.acara (id_acara, judul, deskripsi, tgl_mulai, tgl_akhir, is_free) FROM stdin;
 4638997388	Donor Darah PMI	Donor Darah	2018-02-02	2018-02-03	t
